@@ -1,3 +1,48 @@
-<h1>
-  {{title}}
-</h1>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo center">Restaurante Taiwan one</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="#!">Domicilios</a></li>
+        <li><a href="#!">Productos</a></li>
+        <li><a href="#!">Platos especiales</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <img src="assets/imagenes/restaurant.jpg" width="1400" height="600">
+
+
+    <div class="row" id="listarDomicilios">
+      <div class="col s12">
+        <ul class="tabs">
+          <li class="tab col s3" (click)="listarDomicilio()"><a href="#test1">Mostrar Domicilios</a></li>
+          <li class="tab col s3"><a class="active" href="#test2"></a></li>
+        </ul>
+      </div>
+      <div id="test1" class="col s12" >
+       
+
+           <div class="row">
+              <div class="col s12 m6">
+                <div class="card blue-grey darken-1">
+                  <div class="card-content white-text"  *ngFor="let china of comidaList">
+                    <span class="card-title">Plato requerido: {{china.platos}}</span>
+                    <p> Nombre del cliente: {{china.nombre}}</p><br>
+                    <p> Correo: {{china.correo}}</p><br>
+                    <p> Nombre del chef: {{china.nombreChef}}</p><br>
+                    <p> Valor del pedido: {{china.valor}}</p><br>
+                    <p> Direccion: {{china.direccion}}</p><br>
+                  </div>
+                </div>
+              </div>
+            </div>
+                  
+      </div>
+      <div id="test2" class="col s12"></div>
+   </div>
+
+
+<div class="col s12 m8 l6"> <!-- Note that "m8 l9" was added -->      
+      <comida-china-domicilio>
+      </comida-china-domicilio>
+</div>
